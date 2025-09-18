@@ -40,3 +40,9 @@ def test_sentiment():
     result = run_map_reduce(sentiment_map, word_count_reduce, docs)
     assert result == [('negative', 3), ('positive', 3)]
 
+
+test_word_count_map()
+
+test_word_count_reduce()
+
+test_word_count()

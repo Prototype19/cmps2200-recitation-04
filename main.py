@@ -1,6 +1,7 @@
 # recitation-04
 
 from collections import defaultdict
+from os.path import split
 
 
 #### PART ONE ###
@@ -36,7 +37,8 @@ def word_count_map(doc):
     >>> word_count_map('i am sam i am')
     [('i', 1), ('am', 1), ('sam', 1), ('i', 1), ('am', 1)]
     """
-    ###TODO
+    return list(map(lambda x:(x,1),doc.split()))
+
     
     
 
@@ -53,7 +55,8 @@ def word_count_reduce(group):
     
     NOTE: you should use call the `reduce` function here.
     """
-    ###TODO
+
+    return (group[0], reduce(plus,0,group[1]))
     
     
 
@@ -124,3 +127,5 @@ def sentiment_map(doc,
     """
     ###TODO
 
+
+word_count_map("i am sam i am")
