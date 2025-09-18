@@ -125,7 +125,26 @@ def sentiment_map(doc,
     >>> sentiment_map('it was a terrible waste of time')
     [('negative', 1), ('negative', 1)]
     """
-    ###TODO
+    def not_neutral(word):
+        if word in pos_terms or word in neg_terms:
+            return True
+        else:
+            return False
+    def good_or_bad(word):
+        if word in pos_terms:
+            return ('positive', 1)
+        elif word in neg_terms:
+            return ('negative', 1)
 
 
-word_count_map("i am sam i am")
+    # filter all the words that are neutral
+    filtered_word_list =list(filter(not_neutral, doc.split()))
+    return list(map(good_or_bad, filtered_word_list))
+
+
+
+
+
+
+
+

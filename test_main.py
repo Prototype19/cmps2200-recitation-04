@@ -46,3 +46,7 @@ test_word_count_map()
 test_word_count_reduce()
 
 test_word_count()
+
+test_sentiment_map()
+
+test_sentiment()
