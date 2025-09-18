@@ -1,6 +1,6 @@
 # CMPS 2200  Recitation 04
 
-**Name (Team Member 1):**_________________________  
+**Name (Team Member 1):** Daron Lebaredian  
 **Name (Team Member 2):**_________________________
 
 
@@ -36,7 +36,8 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 4. Assume that a word `w` appears `n` times. What is the **work** and **span** of `word_count_reduce` for this word, assuming a parallel implementation of the `reduce` function?
 
-**Enter answer here**
+**The work of `word_count_reduce` for this word is nlog(n)**
+**The span of `word_count_reduce` for this word is log(n)**
 
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
@@ -52,7 +53,7 @@ for doc in docs:
 
 What is the problem that prevents us from easily parallelizing this solution?
 
-**Enter answer here**
+**Basically when there are two processes, there is a lack of communication between the two processes leading to incorrect counting of each of the terms of the doc. If you added 'stopping' gaps which makes a process wait for info of another process before wokring again to fix this issue but this leads to increase span in the algorithm, which is not ideal.**
 
 
 ## Part 2: Sentiment analysis
